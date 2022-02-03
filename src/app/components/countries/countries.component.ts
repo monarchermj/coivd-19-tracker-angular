@@ -24,4 +24,16 @@ export class CountriesComponent implements OnInit {
       });
     });
   }
+
+  updateValues(country: string) {
+    console.log(country);
+    this.data.forEach((cs) => {
+      if (cs.country == country) {
+        this.totalConfirmed = cs.confirmed || 1;
+        this.totalRecovered = cs.recovered || 1;
+        this.totalActive = cs.active || 1;
+        this.totalDeaths = cs.deaths || 1;
+      }
+    });
+  }
 }
