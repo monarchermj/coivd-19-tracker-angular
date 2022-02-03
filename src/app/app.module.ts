@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { Ng2GoogleChartsModule, GoogleChartsSettings } from 'ng2-google-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,14 +15,15 @@ import { DashboardcardComponent } from './components/dashboardcard/dashboardcard
     NavbarComponent,
     HomeComponent,
     CountriesComponent,
-    DashboardcardComponent
+    DashboardcardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2GoogleChartsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
