@@ -1,32 +1,12 @@
-<div class="p-5 mb-4 bg-light rounded-3">
+<div class="jumbotron bg-white text-center">
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">Covid-19 Tracker</h1>
     <hr />
-    <div class="row">
-      <div class="card col p-3 m-3">
-        <div class="ui statistic">
-          <div class="value">{{totalConfirmed}}</div>
-          <div class="label">Confirmed</div>
-        </div>
-      </div>
-      <div class="card col p-3 m-3">
-        <div class="ui statistic">
-          <div class="value">{{totalRecovered}}</div>
-          <div class="label">Recovered</div>
-        </div>
-      </div>
-      <div class="card col p-3 m-3">
-        <div class="ui statistic">
-          <div class="value">{{totalDeaths}}</div>
-          <div class="label">Deaths</div>
-        </div>
-      </div>
-      <div class="card col p-3 m-3">
-        <div class="ui statistic">
-          <div class="value">{{totalActive}}</div>
-          <div class="label">Active</div>
-        </div>
-      </div>
-    </div>
+    <app-dashboardcard
+      [totalConfirmed]='totalConfirmed'
+      [totalRecovered]='totalRecovered'
+      [totalDeaths]='totalDeaths'
+      [totalActive]='totalActive'
+    ></app-dashboardcard>
   </div>
 </div>
