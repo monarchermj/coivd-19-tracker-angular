@@ -31,14 +31,13 @@ export class DataServiceService {
           if (temp) {
             temp.active = cs.active + temp.active;
             temp.confirmed = cs.confirmed + temp.confirmed;
-            temp.deaths = cs.active + temp.deaths;
-            temp.recovered = cs.active + temp.recovered;
+            temp.deaths = cs.deaths + temp.deaths;
+            temp.recovered = cs.recovered + temp.recovered;
             raw[cs.country] = temp;
           } else {
             raw[cs.country] = cs;
           }
         });
-
         return <GlobalDataSummary[]>Object.values(raw);
       })
     );
