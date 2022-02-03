@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalDataSummary } from 'src/app/models/global-data';
+import { ChartType } from 'angular-google-charts';
 import { DataServiceService } from 'src/app/services/data-service.service';
 
 @Component({
@@ -14,6 +15,19 @@ export class CountriesComponent implements OnInit {
   totalActive = 0;
   totalDeaths = 0;
   totalRecovered = 0;
+  datatable: any[]=[];
+  chart = {
+    LineChart: ChartType.LineChart,
+    height: 500,
+    width: 800,
+    options: {
+      animation: 1000,
+      easing: 'out', 
+      is3D: true,
+    },
+   
+  };
+
   constructor(private service: DataServiceService) {}
 
   ngOnInit(): void {
@@ -23,6 +37,11 @@ export class CountriesComponent implements OnInit {
         this.countries.push(cs.country || '');
       });
     });
+  }
+
+  updateChart(){
+    this.datatable=[];
+    this.datatable.push(['Cases','Date'])
   }
 
   updateValues(country: string) {

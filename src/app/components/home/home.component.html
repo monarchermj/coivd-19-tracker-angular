@@ -9,12 +9,91 @@
       [totalActive]="totalActive"
     ></app-dashboardcard>
 
+    <div class="ui form">
+      <div class="inline fields">
+        <label>Select the Data to be Displayed:</label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input
+              type="radio"
+              id="c"
+              #c
+              (click)="updateChart(c)"
+              value="c"
+              name="casetype"
+              checked="checked"
+            />
+            <label for="c">Confirmed Cases</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input
+              type="radio"
+              id="r"
+              #r
+              (click)="updateChart(r)"
+              value="r"
+              name="casetype"
+            />
+            <label for="r">Recovered</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input
+              type="radio"
+              id="d"
+              #d
+              (click)="updateChart(d)"
+              value="d"
+              name="casetype"
+            />
+            <label for="d">Deaths</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input
+              type="radio"
+              id="a"
+              #a
+              (click)="updateChart(a)"
+              value="a"
+              name="casetype"
+            />
+            <label for="a">Active Cases</label>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
+      <!-- <div class="col">
+        <google-chart
+          [type]="chart.ColumnChart"
+          [width]="chart.width"
+          [options]="chart.options"
+          [height]="chart.height"
+          [data]="datatable"
+        ></google-chart>
+      </div> -->
       <div class="col">
-        <google-chart [data]="columnChart"></google-chart>
+        <google-chart
+          [type]="chart.PieChart"
+          [width]="chart.width"
+          [options]="chart.options"
+          [height]="chart.height"
+          [data]="datatable"
+        ></google-chart>
       </div>
       <div class="col">
-        <google-chart [data]="pieChart"></google-chart>
+        <google-chart
+          [type]="chart.ColumnChart"
+          [width]="chart.width"
+          [options]="chart.options"
+          [height]="chart.height"
+          [data]="datatable"
+        ></google-chart>
       </div>
     </div>
   </div>

@@ -18,4 +18,14 @@
   [totalDeaths]='totalDeaths'
   [totalActive]='totalActive'>
   </app-dashboardcard>
+
+  <div class="row">
+    <google-chart
+      [type]="chart.LineChart"
+      [width]="chart.width"
+      [options]="chart.options"
+      [height]="chart.height"
+      [data]="datatable"
+    ></google-chart>
+  </div>
 </div>
